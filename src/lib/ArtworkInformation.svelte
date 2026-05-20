@@ -1,9 +1,12 @@
 <script>
+	import { fade } from 'svelte/transition';
 	let { item = null } = $props();
 </script>
 
 {#if item}
-	<div class="flex flex-col gap-4">
+<div class="grid [grid-template-areas:'stack']">
+	{#key item}
+	<div class="[grid-area:stack] flex flex-col gap-4" in:fade={{ duration: 200 }} out:fade={{ duration: 100 }}>
 		<div>
 			{#if item.artist}
 				<p class="text-xs text-neutral-400 mb-1">{item.artist}</p>
@@ -22,4 +25,6 @@
 			</p>
 		{/if}
 	</div>
+	{/key}
+</div>
 {/if}

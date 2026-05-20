@@ -1,0 +1,145 @@
+export const items = [
+  {
+    "Duration": 30,
+    "room": "sound",
+    "artist": "Alejandro Moreno",
+    "Email": "alejandromorenojashes@gmail.com",
+    "title": "Salón de Actos - Act I The Benefits of Lime",
+    "Date Created": "April 2026",
+    "Project Status": "Work-in-Progress",
+    "Short Description (50 Words)": "Salón de Actos, Act I: The Benefits of Lime presents the abandoned Windsor Theatre in Chile's Atacama Desert through three layers: the real, the digital, and the 3D-scanned. Through fables and narrated stories, the theatre becomes a living archive where memory, ruin, technology, and desert mythology converge.",
+    "Long Description (200 Words)": "Salón de Actos, Act I: The Benefits of Lime presents the abandoned Windsor Theatre in Chañaral, in Chile's Atacama Desert, as a space where memory, ruin, fiction, and technology converge. The work unfolds through three interwoven layers: the real theatre, filmed in its current state of abandonment; its digital reconstruction; and its 3D-scanned presence, created through photogrammetry.\n\nRather than treating the theatre as a passive ruin, the act transforms it into a protagonist: a body that speaks, remembers, and reappears through images, voices, and digital matter. A series of narrators guide the spectator through fables and fragmented stories connected to the desert, mining history, disappearance, and the persistence of cultural memory.\n\nThe title, The Benefits of Lime, evokes both a material associated with construction, erosion, and preservation, and a symbolic substance capable of covering, whitening, protecting, or erasing traces. Through this tension, the work explores how abandoned cultural spaces can be reactivated as living archives.\n\nAs the first act of the expanded project Salón de Actos, this piece combines cinema, theatre, photogrammetry, digital environments, and archival imagination to recover forgotten theatres of the Atacama Region and return them to visibility."
+  },
+  {
+    "Duration": 15,
+    "room": "sound",
+    "artist": "Jiabao Li",
+    "Email": "stephlijiabao@gmail.com",
+    "title": "Futile Efforts",
+    "Date Created": "2025 Jan",
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "Amid the sublime Arctic landscape, I carried out a series of absurd interventions: freezing melted glacier water and giving it back to the glacier, polishing an iceberg with a lens cleaner, sweeping a snowy mountain, cleaning sea ice with a window wiper, and draining the ocean with a coffee cup.",
+    "Long Description (200 Words)": "https://www.jiabaoli.org/futile-efforts\n\nFrom pumping seawater onto Arctic snow to thicken sea ice to draping Swiss glaciers with reflective blankets to slow their melt, humanity is spending vast resources trying to patch a planetary collapse with tiny, temporary bandages. If such measures can save the Arctic ice from disappearing, I can help too! Amid the sublime Arctic landscape, I carried out a series of absurd interventions: freezing melted glacier water and giving it back to the glacier, polishing an iceberg with a lens cleaner, sweeping a snowy mountain, cleaning sea ice with a window wiper, and draining the ocean with a coffee cup. These futile efforts pose a sharp question to contemporary geoengineering while revealing the fragile yet stubborn condition of human existence in the face of vast planetary change."
+  },
+  {
+    "Duration": 10,
+    "room": "sound",
+    "artist": "Ker Chen",
+    "Email": "ker.q.chen@gmail.com",
+    "title": "Hunting",
+    "Date Created": "2023 May",
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "Hunting is a 10-minute immersive experience that explores themes of self-identity, desire, and spirituality through the metaphor of hunting (Pray/Prey).",
+    "Long Description (200 Words)": "Hunting explores themes of self-identity, desire, and spirituality through the metaphor of hunting (Pray/Prey). Growing up in a small town in southwest China and a multi-religious family, as the first-generation college student in my family and the first person leaving the family, I felt the weight of cultural and familial expectations as I navigated my own path. Through my journey of hunting, I seek to understand and embrace my own desires while also grappling with guilt and questions of group identity. Hunting weaves elements of traditional myths creating a narrative that reflects my own experiences. Hunting is a deeply personal project that invites viewers to reflect on their own journeys of self-discovery and the complex interplay between identity, desire, and spirituality."
+  },
+  {
+    "Duration": 5.5,
+    "room": "sound",
+    "artist": "Adelle Yingxi Lin",
+    "Email": "adelle.lin@gmail.com",
+    "title": "Passage",
+    "Date Created": 2026,
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "Passage is an experimental single-channel film weaving site-based performance with early renders of a hybrid digital landscape. A 160-foot multilingual calligraphic scroll moves through desert, cemetery, and virtual terrain, becoming a screen-based vessel for memory, migration, and the afterlives of place.",
+    "Long Description (200 Words)": "Passage is a single-channel experimental film excerpted from I Dreamed of a River, an ongoing performance-documentary project unfolding across physical and computational landscapes. The work follows a 160-foot calligraphic scroll written in Chinese, Hebrew, and Arabic as it is ceremonially carried, unraveled, and transformed across sites in Jordan and Singapore. Moving between the Wadi Rum desert, a family cemetery in Singapore, and early renders of a hybrid digital environment built from LiDAR scans of landforms, architecture, and social spaces, the film treats the scroll as both material object and moving interface.\n\nThrough layered site-based footage, digital reconstruction, and ritual performance, Passage explores how memory persists after migration, how landscapes hold ancestral trace, and how screen-based worlds can become spaces for recombining histories that are fragmented by distance, assimilation, and loss."
+  },
+  {
+    "Duration": 20,
+    "room": "sound",
+    "artist": "Kordae Jatafa Henry",
+    "Email": "Kordae.j.h@gmail.com",
+    "title": "The Third Horizon",
+    "Date Created": 2026,
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "A triptych of films exploring speculative futures through ritual, movement, and myth. Bringing together Makara, Earth Mother, Sky Father, and IF NOT NOW (excerpt), the program unfolds as spiritual cinema—where body, music, and ecology converge across time, and film becomes a site of memory, transformation, and transmission.",
+    "Long Description (200 Words)": "A triptych of films exploring speculative futures through ritual, movement, and myth. Bringing together Makara, Earth Mother, Sky Father, and IF NOT NOW (excerpt), the program unfolds as a form of spiritual cinema—where animation, performance, and sound operate as systems of transmission.\n\nAcross the works, body, music, and ecology converge through layered temporalities, moving between past, present, and speculative futures. Each film engages the body as a site of spirit, memory, and transformation—where gesture, rhythm, and image carry histories that exceed linear time.\n\nThrough choreography, visual effects, and sound, the films construct speculative worlds shaped by both material and immaterial forces. Geological epochs intersect with spiritual infrastructures; landscapes become carriers of ancestral knowledge; and Black virtuosity emerges as a generative force within and beyond systems of extraction, technology, and survival.\n\nTogether, the triptych proposes cinema not only as a room of representation, but as a living process—one that transmits, transforms, and reconfigures relationships between body, environment, and the unseen."
+  },
+  {
+    "Duration": 5.25,
+    "room": "projection",
+    "artist": "Gabe B.C.",
+    "Email": "gabebc@gmail.com",
+    "title": "Explorers",
+    "Date Created": 2026,
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "Explorers is a video artwork featuring over 150 people about the power of social influence. The work draws a frame around the notion of community and the fleeting communal experiences that make up daily life.",
+    "Long Description (200 Words)": "Explorers features 150 people going through a cathartic moment of social influence together. Social scientists define social influence as the idea that our thoughts, feelings, and actions are affected by the presence of others whether their presence is real, imagined, or implied. We can be aware of social influence when it occurs, but it also often occurs without our conscious knowledge or awareness. \n\nExplorers features a silent composition of a very human scene: a crowd of people pausing to witness something captivating yet unnamed. While some Explorers stand in contemplative thought, others snap photos of the awe-inspiring subject that is intentionally left off screen. Are they sharing in something sublime, confounding, or disturbing? Is the role of these Explorers to guide us, to influence us, or to reflect on the barometers of social connection, the human interactions often mitigated by our mobile devices and tech distractions? \n\nUndoubtably the reaction to seeing \"A Chorus\" is for visitors to take out their own devices and snap photos of the installation, mimicking the performance taking place in the work. The work creates a connection between viewer and artwork but also questions the fragility of this connection dictated by devices. In a world where so many of our connections are digital or mediated by a machine how do we connect on a deep level as human beings? \n\nThis work was originally commissioned by the Exploratorium in San Francisco California."
+  },
+  {
+    "Duration": 3.25,
+    "room": "projection",
+    "artist": "Adam Cole",
+    "Email": "acole9@gmail.com",
+    "title": "Multi-Head Attention",
+    "Date Created": "April 2026",
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "Eight kiss scenes crystallize into focus within a strip of latent noise only to dissolve back into abstraction. Multi-Head Attention is an experimental film built not from an AI model's outputs but from visualizing its internal calculations during generation — where the diffusion process itself mirrors the formation and dissolution of intimacy.",
+    "Long Description (200 Words)": "Eight kiss scenes crystallize into focus within a strip of latent noise, only to disintegrate back into abstraction. Multi-Head Attention is an experimental film that repurposes the internal mechanics of a generative AI video model as raw artistic material. Rather than working with model outputs, the project captures and visualizes the model's inner workings (the multi-head attention mechanism itself) throughout the generation process, exposing the system's underlying technical reality and harnessing that behavior for original creative purposes.\n\nThis arc — structure materializing from noise and rapidly dissolving — draws a parallel between the diffusion process and the formation and inevitable dissolution of emotional intimacy.\n\nWhile the final outputs echo familiar cinematic conventions of romance, the mid-process visualizations carry far greater ambiguity, especially in their disintegration. Familiar identity and gender markers are nearly invisible in this abstracted view, particularly at lower diffusion steps. What remains is the iconic image of the kiss pared down to a more mythical ideal and choreography, both physical and emotional.\n\nHere, the inherent noise of the diffusion model offers a novel way to interpret intimacy beyond photorealistic representation, suggesting new narrative forms grounded specifically in AI diffusion mechanics, where the model's construction of form aligns with human perceptual experience."
+  },
+  {
+    "Duration": 8,
+    "room": "projection",
+    "artist": "Eirini Linardaki",
+    "Email": "linardaki@gmail.com",
+    "title": "Wahoo Blast",
+    "Date Created": "2025–2026",
+    "Project Status": "Prototype",
+    "Short Description (50 Words)": "Wahoo Blast is an in-progress experimental moving-image work where layered textile animations generate shifting emergent forms born from an underwater explosion. Engulfing the screen through continuous metamorphosis, the work reflects on coastal resilience, militarized seas, and oceanic pollution through a digital landscape of warning, survival, and resistance.",
+    "Long Description (200 Words)": "Wahoo Blast is an in-progress single-channel experimental moving-image work, conceived as the current iteration of a project that will develop into a three-channel immersive installation. Created through layered textile animation in collaboration with composer Adam Maor, the work is built from more than 350 hand-composed layers that transform fabrics into shifting fields of eruption, drift, and recomposition, where textile matter generates mutating forms moving between seascape, apparition, geological body, and atmospheric event.\n\nRather than unfolding as a fixed sequence, the animation evolves through unstable emergent formations born from the explosion itself—appearing, dissolving, and reconfiguring as fabric movement gradually engulfs the screen. Calm oceanic passages give way to swelling shapes and surges where textiles behave almost as living matter.\n\nReflecting on environmental resilience in coastal communities shaped by war, militarization, and oceanic pollution, the work uses fabric as both political and sensorial material, carrying traces of collective memory and ecological resistance. Archival imagery is gradually dissolved into woven, accumulating textures, shifting the work from representation toward transformation.\n\nPresented here as a single-channel screen work, Wahoo Blast also serves as the foundation for a future three-channel immersive environment where catastrophe transforms into unstable forms of survival and resistance."
+  },
+  {
+    "Duration": 5.75,
+    "room": "projection",
+    "artist": "Ambrose Trataris",
+    "Email": "ambrosetrataris@gmail.com",
+    "title": "Electric Apostles",
+    "Date Created": "9/24/25",
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "Electric Apostles is a video frieze depicting a tableau of performers, djs, dancers, and club goers from around the world in their embodied virtual reality avatars coming to life for a series of movements before returning to a state of rest.",
+    "Long Description (200 Words)": "Electric Apostles is a video frieze depicting a tableau of performers, DJs, dancers, and clubgoers from around the world in their embodied virtual-reality avatars coming to life for a series of movements before returning to a state of rest. Set in an ancient landscape and to a backdrop of alternative electronica, viewers are immersed in a living monument of queer and transgender aesthetics. Inspired by the Villa of Mysteries in Pompeii and David Cannon Dashiell's \"Queer Mysteries,\" this living frieze evokes the activeness of history, calling to attention a world being developed in parallel and, often unseen, virtual reality spaces. \n\nThe installation features music by Dollii and performances by SF and LA-based Drag Kings VERA!, Skirt C, Mudd the Two Spirit, Jota Mercury, and Cy Berspace, and performances by VRChat nightlife producers and cultural bearers Skoot, Ru, Tilly, and Dust Bunny. 3D scans of NY-based Drag performers Julie J, Sweaty Eddie, and Tuna Melt."
+  },
+  {
+    "Duration": 7,
+    "room": "projection",
+    "artist": "peter burr",
+    "Email": "to.peter.burr@gmail.com",
+    "title": "INTERSTITAL MAINTENANCE",
+    "Date Created": 2026,
+    "Project Status": "Work-in-Progress",
+    "Short Description (50 Words)": "INTERSTITIAL MAINTENANCE presents the spaces between events in Burr's ongoing procedural artwork The Maintenance Game: empty corridors, stained surfaces, equipment left running, rooms prepared for no one. The building accumulates residue from every cycle. Foam hardens on walls. Lights stay on. Work-in-progress footage from the 2026 production",
+    "Long Description (200 Words)": "INTERSTITIAL MAINTENANCE presents the spaces between events in Burr's ongoing procedural artwork The Maintenance Game: empty corridors, stained surfaces, equipment left running, rooms prepared for no one. The building accumulates residue from every cycle. Foam hardens on walls. Lights stay on.\nThe Maintenance Game is a self-sustaining simulation set within a decaying architectural labyrinth. Fully automated digital entities perform maintenance, regulation, and repair across shifting modules governed by competing hydraulic AIs. Liquidators scrub contamination from unstable surfaces. Friends prepare social spaces for gatherings that never happen. Planners redesign systems that resist their control. The simulation runs without player intervention, unfolding in real time as inhabitants navigate tasks and systemic failures.\nINTERSTITIAL MAINTENANCE isolates what the inhabitants leave behind. Sealant foam curing on a doorframe where something was patched. A corridor light cycling through its spectrum with no one underneath it. Wet flooring drying in the shape of a route someone took. Vending machines still illuminated. The camera holds on architecture the way a building inspector would, except the inspection never concludes and no report gets filed.\nWork-in-progress footage from the 2026 production. Part of Burr's larger Aria Engine project."
+  },
+  {
+    "Duration": 5,
+    "room": "projection",
+    "artist": "Yaloo",
+    "Email": "ylim@calarts.edu",
+    "title": "Project Shininho (Work in Progress)",
+    "Date Created": 2026,
+    "Project Status": "Prototype",
+    "Short Description (50 Words)": "〈Shininho Landing〉 is a polyphonic opera where an 86-year-old K-pop idol \"Grandma Pirate\" lands on West Seoul's data layers, hijacking sensory archives and rewriting memory. Originally produced for an 8-panel LED screen on an octagonal corten steel sculpture, the work reconfigures body, data, and urban history through speculative worldbuilding.",
+    "Long Description (200 Words)": "〈Shininho Landing〉, is a polyphonic opera in which an 86-year-old K-pop idol—\"Grandma Pirate\" Shininho (the artist's maternal grandmother)—lands on the spatial and temporal data of West Seoul while invading a data bank. The work constructs a speculative narrative that mutates like oral myth.\n\nMoving through layered urban strata where industrial labor histories overlap with server infrastructures and platform economies, Shininho hijacks the sensory and visual data of the city. Her piracy becomes a method of re-narrating history and reclaiming memory, disrupting systems that reduce people and places to extractable resources.\n\nHer elderly female body resists the logic of optimization, accumulating error, delay, and residue as alternative temporalities.\n\nThis is an excerpt of 〈Sininho Landing〉, originally made for an 8-panel LED screen on an octagonal corten steel sculpture, setting within a pirate vessel–data center hybrid in the backyard of the Seo Seoul Museum of Art, an octagonal array of LED panels continuously recombines shifting relations between body, object, ancestor, and data."
+  },
+  {
+    "Duration": 10,
+    "room": "projection",
+    "artist": "Xin Ying, Alan Winslow, Mimi Yin with NUUM Collective",
+    "Email": "mimiyin@gmail.com",
+    "title": "Unraveling Technique",
+    "Date Created": "March 2025",
+    "Project Status": "Prototype",
+    "Short Description (50 Words)": "A series of slowly evolving choreographies of pure dance technique. Unravel captures some of the foundational progressions of Graham technique at 240 fps and feeds them through an algorithm created in Touch Designer to provoke a physical response to the compositional forms.",
+    "Long Description (200 Words)": "A slowly evolving choreography of pure technique, Unravel reveals the structures embedded within the Graham movement form. Captured at 240 fps to afford slower consumption, each progression is placed side-by-side with itself and driven with algorithms that put the technique in conversation with itself.\n\nCharacterized by spiraling, oppositional forces grounded in a contracted pelvis that appears to empty the body of breath, the technique expresses a feeling of the body in extremis or at the point of death, \n\nAt the same time, there is always a return, renewal, rebirth. The body continually moving through cycles of dying and coming back to life. A constant wheel of endings and beginnings that generates a dialogue of pushing and pulling, winding and unwinding that is visceral, felt as opposed to understood.\n\nAs a viewer, we become fully subsumed by the relentless revolutions of interaction."
+  },
+  {
+    "Duration": 4.13,
+    "room": "projection",
+    "artist": "Winslow Porter, Elie Zananiri",
+    "Email": "winslow.porter@gmail.com",
+    "title": "Forager: Spore to Forest Floor",
+    "Date Created": "9/3/24",
+    "Project Status": "Complete",
+    "Short Description (50 Words)": "Witness the lifecycle of a Pink Oyster mushroom in it's entirety. The eternal loop from spore to fruity body to decay. Back to the forest again and again.",
+    "Long Description (200 Words)": "A mushroom is a door in the floor. Open it, and discover an endless, underground network that feeds life-giving essentials to the plants above. Microscopic highways of mycelium a million miles long run beneath, hidden from our eye. And there, in the dark tunnels of the underground, this vast, invisible network performs nature's alchemy, converting the many into one. An essential song that sustains all earthly life.\n\nEnter Forager and live the life of fungi, from air-borne spore to underground mycelium to sprouting mushroom. Bring the forest to life, and discover the magical world beneath your feet.\n\nThis is the first ever photogrammetry time-lapse of a Pink Oyster mushroom\n\nBy developing cutting-edge 3D scanning hardware and software, the Forager team has begun capturing a library of mushrooms growing over time and play them back as hyperrealist animations in the Unreal Engine."
+  }
+];
