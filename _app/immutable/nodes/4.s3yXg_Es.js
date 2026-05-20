@@ -1,1 +1,0 @@
-import{B as e,z as t}from"../chunks/s_lp_ZPk.js";import"../chunks/D1hYfEew.js";import{n,t as r}from"../chunks/DUjFp9cq.js";function i(i,a){e(a,!0);let o=n.filter(e=>e.room===`sound`);r(i,{get items(){return o}}),t()}export{i as component};
