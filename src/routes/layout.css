@@ -1,2 +1,6 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@layer base {
+	body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+}

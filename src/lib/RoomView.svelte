@@ -2,7 +2,7 @@
 	import Timeline from '$lib/Timeline.svelte';
 	import ArtworkInformation from '$lib/ArtworkInformation.svelte';
 
-	let { items = [] } = $props();
+	let { items = [], accentColor = null } = $props();
 
 	let active = $state(items.length ? Math.floor(Math.random() * items.length) : null);
 	const selectedItem = $derived(active !== null ? items[active] : null);
@@ -19,7 +19,7 @@
 
 <div class="flex flex-col-reverse gap-10 p-8 md:flex-row md:gap-16 md:p-12">
 	<div class="shrink-0 md:w-56">
-		<Timeline items={timelineItems} bind:active />
+		<Timeline items={timelineItems} bind:active {accentColor} />
 	</div>
 	<div class="flex-1 md:max-w-lg">
 		<ArtworkInformation item={selectedItem} />

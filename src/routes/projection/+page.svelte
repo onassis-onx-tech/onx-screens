@@ -5,4 +5,4 @@
 	const projectionItems = items.filter((item) => item.room === 'projection');
 </script>
 
-<RoomView items={projectionItems} />
+<RoomView items={projectionItems} accentColor="#5f3eff" />

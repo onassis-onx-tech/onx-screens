@@ -2,29 +2,41 @@
 	import { items } from '$lib/data.js';
 	import Timeline from '$lib/Timeline.svelte';
 
-	const soundItems = items
-		.filter((item) => item.room === 'sound')
-		.map((item) => ({ primary: item.title, secondary: item.artist, description: `duration: ${item.duration} min. plays at 3:24, 4:24, 5:24` }));
-
-	soundItems[2].description = 'duration: 3 min. plays at 3:24, 4:24, 5:24. Now playing: 3:29 remaining';
-	soundItems[3].description = 'duration: 3 min. plays at 3:24, 4:24, 5:24. Up next.';
-
 	const projectionItems = items
 		.filter((item) => item.room === 'projection')
-		.map((item) => ({ primary: item.title, secondary: item.artist, description: `duration: ${item.duration} min. plays at 3:24, 4:24, 5:24` }));
+		.map((item, i) => ({
+			primary: item.title,
+			secondary: item.artist,
+			description: i === 4
+				? `Runtime: ${item.duration} min. Now playing: 3:29 remaining`
+				: `Runtime: ${item.duration} min. plays at 3:24, 4:24, 5:24`
+		}));
 
-	projectionItems[4].description = 'duration: 3 min. plays at 3:24, 4:24, 5:24. Now playing: 3:29 remaining';
-	projectionItems[5].description = 'duration: 3 min. plays at 3:24, 4:24, 5:24. Up next.';
-
+	const soundItems = items
+		.filter((item) => item.room === 'sound')
+		.map((item, i) => ({
+			primary: item.title,
+			secondary: item.artist,
+			description: i === 2
+				? `Runtime: ${item.duration} min. Now playing: 3:29 remaining`
+				: `Runtime: ${item.duration} min. plays at 3:24, 4:24, 5:24`
+		}));
 </script>
 
-<div class="flex h-screen divide-x divide-neutral-200">
+<div class="flex h-screen bg-black overflow-hidden">
 	<div class="flex flex-1 flex-col gap-6 p-10">
-		<h2 class="text-xs font-semibold tracking-widest text-neutral-400 uppercase">Sound Room</h2>
-		<Timeline items={soundItems} interactive={false} active={2} />
+		<h1 class="text-6xl font-bold leading-tight" style="color: #5f3eff">Projection Room</h1>
+		<Timeline items={projectionItems} interactive={false} active={4} dark={true} accentColor="#5f3eff" />
 	</div>
+
+	<div class="flex flex-col justify-between py-8 mx-2 self-stretch">
+		{#each Array(7) as _}
+			<div class="w-[10px] h-6 bg-white"></div>
+		{/each}
+	</div>
+
 	<div class="flex flex-1 flex-col gap-6 p-10">
-		<h2 class="text-xs font-semibold tracking-widest text-neutral-400 uppercase">Projection Room</h2>
-		<Timeline items={projectionItems} interactive={false} active={4}/>
+		<h1 class="text-6xl font-bold leading-tight" style="color: #FAF80F">Sound Room</h1>
+		<Timeline items={soundItems} interactive={false} active={2} dark={true} accentColor="#FAF80F" />
 	</div>
 </div>
