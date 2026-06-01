@@ -1,0 +1,1 @@
+import{B as e,V as t}from"../chunks/DJNMWRrD.js";import"../chunks/CFKVnMbq.js";import{n}from"../chunks/CMBcqVhI.js";import{t as r}from"../chunks/DYTxbUu-.js";function i(i,a){t(a,!0);let o=n.filter(e=>e.room===`sound`);r(i,{get items(){return o},accentColor:`#FAF80F`,title:`Sound Room`}),e()}export{i as component};
