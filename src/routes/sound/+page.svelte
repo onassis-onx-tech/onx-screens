@@ -5,4 +5,4 @@
 	const soundItems = items.filter((item) => item.room === 'sound');
 </script>
 
-<RoomView items={soundItems} accentColor="#FAF80F" />
+<RoomView items={soundItems} accentColor="#FAF80F" title="Sound Room" />

@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-	let { item = null } = $props();
+	let { item = null, accentColor = null } = $props();
 </script>
 
 {#if item}
@@ -11,7 +11,7 @@
 			{#if item.artist}
 				<p class="text-xs text-neutral-400 mb-1">{item.artist}</p>
 			{/if}
-			<h2 class="text-lg font-semibold text-neutral-900 leading-snug">{item.title}</h2>
+			<h2 class="font-cumbia leading-snug text-2xl font-bold text-white">{item.title}</h2>
 			<p class="text-xs text-neutral-400 mt-1">
 				{[item['Date Created'], item.Medium, item.Duration ? item.Duration + ' min' : null]
 					.filter(Boolean)
@@ -20,7 +20,7 @@
 		</div>
 
 		{#if item['Long Description (200 Words)']}
-			<p class="text-sm text-neutral-700 leading-relaxed whitespace-pre-line">
+			<p class="text-sm leading-relaxed whitespace-pre-line text-neutral-300">
 				{item['Long Description (200 Words)']}
 			</p>
 		{/if}

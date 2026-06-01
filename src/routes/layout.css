@@ -1,6 +1,17 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+@font-face {
+	font-family: 'CumbiaDeMaria';
+	src: url('/CumbiaDeMariaV41Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@theme {
+	--font-cumbia: 'CumbiaDeMaria', sans-serif;
+}
+
 @layer base {
 	body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 }
