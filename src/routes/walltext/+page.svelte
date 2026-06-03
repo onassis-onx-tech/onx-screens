@@ -1,12 +1,13 @@
 <script>
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
 
   const texts = [
-    `"ONX Screens is a new program from Onassis ONX for screen-based projects built for the speed, circulation, and shared languages of digital culture. Moving image and video game works are now both shaped by rapid tool evolution (AI, game engines, virtual production, automatic editing systems, platform native aesthetics) as much as circulation itself.
+    `ONX Screens is a new program from Onassis ONX for screen-based projects built for the speed, circulation, and shared languages of digital culture. Moving image and video game works are now both shaped by rapid tool evolution (AI, game engines, virtual production, automatic editing systems, platform native aesthetics) as much as circulation itself.
 
         This exhibition addresses these quickly evolving mass mediums, treating the screen as both medium and infrastructure in a playful space for works in progress, prototypes, and other experiments.
 
-        ONX Screens features 30 works with a total runtime of over 12 hours, drawn from the extended Onassis ONX community, including our Members, Fellows, ONX/AiR, Outland, and the NEW INC Y12 XR Track."`,
+        ONX Screens features 30 works with a total runtime of over 12 hours, drawn from the extended Onassis ONX community, including our Members, Fellows, ONX/AiR, Outland, and the NEW INC Y12 XR Track.`,
     `Featured Artists:
 
 
@@ -67,7 +68,7 @@
 <div class="w-screen h-screen flex items-center justify-center bg-black">
   <div class="relative aspect-video max-h-screen max-w-screen h-screen">
     <img
-      src="/ONXScreensWallTextVersion4BLANK.png"
+      src="{base}/ONXScreensWallTextVersion4BLANK.png"
       alt="Wall text"
       class="w-full h-full"
     />

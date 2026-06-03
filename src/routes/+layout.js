@@ -1,12 +1,11 @@
 import Papa from 'papaparse';
+import csvText from '../../static/artData.csv?raw';
 
 export const prerender = true;
 export const trailingSlash = 'always';
 
-export async function load({ fetch }) {
-	const res = await fetch('/artData.csv');
-	const text = await res.text();
-	const { data } = Papa.parse(text, { header: true, skipEmptyLines: true });
+export async function load() {
+	const { data } = Papa.parse(csvText, { header: true, skipEmptyLines: true });
 
 	const items = data.map((row) => ({
 		artist: row['Name'].trim(),
