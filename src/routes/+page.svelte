@@ -5,4 +5,5 @@
 	<a href="{base}/sound">Sound Room</a>
 	<a href="{base}/projection">Projection Room</a>
 	<a href="{base}/wayfinding">Wayfinding</a>
+	<a href="{base}/walltext">Wall Text</a>
 </div>

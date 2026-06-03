@@ -13,15 +13,15 @@
 			{/if}
 			<h2 class="font-cumbia leading-snug text-2xl font-bold text-white">{item.title}</h2>
 			<p class="text-xs text-neutral-400 mt-1">
-				{[item['Date Created'], item.Medium, item.Duration ? item.Duration + ' min' : null]
+				{[item.year, item.category, item.duration]
 					.filter(Boolean)
 					.join(' · ')}
 			</p>
 		</div>
 
-		{#if item['Long Description (200 Words)']}
+		{#if item.description}
 			<p class="text-sm leading-relaxed whitespace-pre-line text-neutral-300">
-				{item['Long Description (200 Words)']}
+				{item.description}
 			</p>
 		{/if}
 	</div>

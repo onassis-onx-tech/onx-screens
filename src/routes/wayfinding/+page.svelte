@@ -1,26 +1,33 @@
 <script>
-	import { items } from '$lib/data.js';
 	import Timeline from '$lib/Timeline.svelte';
 
-	const projectionItems = items
-		.filter((item) => item.room === 'projection')
-		.map((item, i) => ({
-			primary: item.title,
-			secondary: item.artist,
-			description: i === 4
-				? `Runtime: ${item.duration} min. Now playing: 3:29 remaining`
-				: `Runtime: ${item.duration} min. plays at 3:24, 4:24, 5:24`
-		}));
+	let { data } = $props();
 
-	const soundItems = items
-		.filter((item) => item.room === 'sound')
-		.map((item, i) => ({
-			primary: item.title,
-			secondary: item.artist,
-			description: i === 2
-				? `Runtime: ${item.duration} min. Now playing: 3:29 remaining`
-				: `Runtime: ${item.duration} min. plays at 3:24, 4:24, 5:24`
-		}));
+	const projectionItems = $derived(
+		data.items
+			.filter((item) => item.room === 'projection')
+			.map((item, i) => ({
+				primary: item.title,
+				secondary: item.artist,
+				description:
+					i === 4
+						? `Runtime: ${item.duration}. Now playing: 3:29 remaining`
+						: `Runtime: ${item.duration}. plays at 3:24, 4:24, 5:24`
+			}))
+	);
+
+	const soundItems = $derived(
+		data.items
+			.filter((item) => item.room === 'sound')
+			.map((item, i) => ({
+				primary: item.title,
+				secondary: item.artist,
+				description:
+					i === 2
+						? `Runtime: ${item.duration}. Now playing: 3:29 remaining`
+						: `Runtime: ${item.duration}. plays at 3:24, 4:24, 5:24`
+			}))
+	);
 </script>
 
 <div class="flex h-screen bg-black overflow-hidden">
