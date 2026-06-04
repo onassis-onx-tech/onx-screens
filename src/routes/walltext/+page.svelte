@@ -11,18 +11,7 @@
     `Featured Artists:
 
 
-        Adam Cole, Adelle Yingxi Lin, Alejandro Moreno Jashés,
-        Alfredo Salazar-Caro, Ambrose Trataris, Anito Soul (Michael Balangue),
-        Auriea Harvey + Michael Samyn, Brad Davis, Cameron A. Granger,
-        Eirini Linardaki + Adam Maor, elekhlekha อีเหละเขละขละ (Nitcha Tothong +
-        Kengchakaj Kengkarnka), ​Flan Falacci, ​Winslow Porter + Elie Zananiri,
-        FuturePerfect Studio, Gabe Barcia-Colombo, Jiabao Li,
-        Jiabao Li + Lauren Schroeder, Kakia Konstantinaki, Ker Chen,
-        Kordae Jatafa Henry, Matthew D Gantt + Ariadne Randall,
-        Miles Peyton + Ida Pruitt, ​peter burr, Sean Capone, Sean Kennedy,
-        Tomo Kihara + Playfool (Daniel Coppen & Saki Maruyama),
-        Xin Ying + Alan Winslow + Mimi Yin with NUUM Collective,
-        Wendi Yan + Yi Xie,  Yaloo`
+        Adam Cole, Adelle Yingxi Lin, Alejandro Moreno Jashés, Alfredo Salazar-Caro, Ambrose Trataris, Anito Soul (Michael Balangue), Auriea Harvey + Michael Samyn, Brad Davis, Cameron A. Granger, Eirini Linardaki + Adam Maor, elekhlekha อีเหละเขละขละ (Nitcha Tothong + Kengchakaj Kengkarnka), ​Flan Falacci, ​Winslow Porter + Elie Zananiri, FuturePerfect Studio, Gabe Barcia-Colombo, Jiabao Li, Jiabao Li + Lauren Schroeder, Kakia Konstantinaki, Ker Chen, Kordae Jatafa Henry, Matthew D Gantt + Ariadne Randall, Miles Peyton + Ida Pruitt, ​peter burr, Sean Capone, Sean Kennedy, Tomo Kihara + Playfool (Daniel Coppen & Saki Maruyama), Xin Ying + Alan Winslow + Mimi Yin with NUUM Collective, Wendi Yan + Yi Xie,  Yaloo`
   ];
 
   function tokenize(text) {
