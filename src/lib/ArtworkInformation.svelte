@@ -8,11 +8,11 @@
 	{#key item}
 	<div class="[grid-area:stack] flex flex-col gap-4" in:fade={{ duration: 200 }} out:fade={{ duration: 100 }}>
 		<div>
-			{#if item.artist}
+			<!-- {#if item.artist}
 				<p class="text-xs text-neutral-400 mb-1">{item.artist}</p>
 			{/if}
-			<h2 class="font-cumbia leading-snug text-2xl font-bold text-white">{item.title}</h2>
-			<p class="text-xs text-neutral-400 mt-1">
+			<h2 class="font-cumbia leading-snug text-2xl font-bold text-white">{item.title}</h2> -->
+			<p class="text-xl text-neutral-400 mt-1">
 				{[item.year, item.category, item.duration]
 					.filter(Boolean)
 					.join(' · ')}
@@ -20,7 +20,7 @@
 		</div>
 
 		{#if item.description}
-			<p class="text-sm leading-relaxed whitespace-pre-line text-neutral-300">
+			<p class="text-2xl leading-relaxed whitespace-pre-line text-neutral-300">
 				{item.description}
 			</p>
 		{/if}

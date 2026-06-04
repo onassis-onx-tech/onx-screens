@@ -77,10 +77,8 @@
 				secondary: item.artist,
 				description:
 					item.playing !== -1
-						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}${playTimes[i].length > 0 ? ` · plays again at ${playTimes[i][0]}` : ''}`
-						: playTimes[i].length > 0
-							? `Runtime: ${item.duration}. plays at ${playTimes[i].join(', ')}`
-							: `Runtime: ${item.duration}`
+						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
+						: `Runtime: ${item.duration}. plays at ${playTimes[i].join(', ')}`
 			}));
 		})()
 	);
@@ -93,10 +91,8 @@
 				secondary: item.artist,
 				description:
 					item.playing !== -1
-						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}${playTimes[i].length > 0 ? ` · plays again at ${playTimes[i][0]}` : ''}`
-						: playTimes[i].length > 0
-							? `Runtime: ${item.duration}. plays at ${playTimes[i].join(', ')}`
-							: `Runtime: ${item.duration}`
+						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
+						: `Runtime: ${item.duration}. plays at ${playTimes[i].join(', ')}`
 			}));
 		})()
 	);

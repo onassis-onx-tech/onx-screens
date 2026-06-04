@@ -1,12 +1,12 @@
 <script>
-	let { items = [], active = $bindable(null), interactive = true, accentColor = null } = $props();
+	let { items = [], active = $bindable(null), interactive = true, accentColor = null, onselect = null } = $props();
 </script>
 
 <div class="relative flex flex-col">
 	{#each items as item, i}
 		{@const isActive = active === i}
 		<button
-			onclick={interactive ? () => (active = i) : undefined}
+			onclick={interactive ? () => { active = i; onselect?.(i); } : undefined}
 			class="relative flex gap-4 pb-4 last:pb-0 text-left transition-all duration-150 {interactive ? 'cursor-pointer' : 'cursor-default'}"
 		>
 			<div class="flex flex-col transition-all duration-150">

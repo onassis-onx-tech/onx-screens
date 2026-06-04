@@ -35,8 +35,34 @@
 		artTimeline(items, { titleCardDuration, endCardDuration, currentTime, totalDuration })
 	);
 
-	const active = $derived(timedItems.findIndex((item) => item.playing !== -1));
-	const selectedItem = $derived(active !== -1 ? items[active] : null);
+	const autoActive = $derived(() => {
+		const playing = timedItems.findIndex((item) => item.playing !== -1);
+		if (playing !== -1) return playing;
+		const loopDuration = timedItems.reduce(
+			(sum, item) => sum + titleCardDuration + item.durationSeconds + endCardDuration, 0
+		);
+		if (loopDuration === 0 || currentTime < 0 || currentTime >= totalDuration) return -1;
+		const pos = currentTime % loopDuration;
+		for (let i = timedItems.length - 1; i >= 0; i--) {
+			if (pos >= timedItems[i].startTime) return i;
+		}
+		return -1;
+	});
+	const autoSelectedItem = $derived(autoActive !== -1 ? items[autoActive] : null);
+
+	let pinnedIndex = $state(null);
+	let resetTimer;
+
+	function handleSelect(index) {
+		pinnedIndex = index;
+		clearTimeout(resetTimer);
+		resetTimer = setTimeout(() => { pinnedIndex = null; }, 30000);
+	}
+
+	onDestroy(() => clearTimeout(resetTimer));
+
+	const active = $derived(pinnedIndex !== null ? pinnedIndex : autoActive);
+	const selectedItem = $derived(pinnedIndex !== null ? items[pinnedIndex] : autoSelectedItem);
 
 	function formatTimeLeft(seconds) {
 		const s = Math.round(seconds);
