@@ -38,13 +38,10 @@
 	const autoActive = $derived.by(() => {
 		const playing = timedItems.findIndex((item) => item.playing !== -1);
 		if (playing !== -1) return playing;
-		const loopDuration = timedItems.reduce(
-			(sum, item) => sum + titleCardDuration + item.durationSeconds + endCardDuration, 0
-		);
-		if (loopDuration === 0 || currentTime < 0 || currentTime >= totalDuration) return -1;
-		const pos = currentTime % loopDuration;
+		const pos = timedItems[0]?.posInCurrentLoop ?? -1;
+		if (pos < 0) return -1;
 		for (let i = timedItems.length - 1; i >= 0; i--) {
-			if (pos >= timedItems[i].startTime) return i;
+			if (timedItems[i].startTime !== null && pos >= timedItems[i].startTime) return i;
 		}
 		return -1;
 	});
@@ -78,11 +75,13 @@
 			description:
 				item.playing !== -1
 					? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
-					: i === autoActive - 1
-						? 'just finished'
-						: i === autoActive + 1
-							? 'next up'
-							: null
+					: item.skipped
+						? null
+						: i === autoActive - 1
+							? 'just finished'
+							: i === autoActive + 1
+								? 'next up'
+								: null
 		}))
 	);
 </script>

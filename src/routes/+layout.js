@@ -12,6 +12,7 @@ export async function load() {
 		title: row['Artwork Title'],
 		year: row['Year'],
 		duration: row['Duration'],
+		skipCycles: parseInt(row['Skip Cycles']) || 0,
 		category: row['Category'],
 		description: row['Description'],
 		credits: row['Credits'],

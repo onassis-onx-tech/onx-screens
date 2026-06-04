@@ -10,29 +10,57 @@ export function artTimeline(items, { titleCardDuration, endCardDuration, current
 
 	const segments = items.map((item) => {
 		const videoDuration = parseDuration(item.duration);
-		return { videoDuration, segmentDuration: titleCardDuration + videoDuration + endCardDuration };
+		const skipCycles = item.skipCycles ?? 0;
+		return { videoDuration, segmentDuration: titleCardDuration + videoDuration + endCardDuration, skipCycles };
 	});
 
-	const startTimes = segments.reduce((acc, { segmentDuration }, i) => {
-		acc.push(i === 0 ? 0 : acc[i - 1] + segments[i - 1].segmentDuration);
-		return acc;
-	}, []);
+	// Walk loops k=1,2,3,... accumulating duration until we find the loop containing currentTime.
+	let elapsed = 0;
+	let currentLoop = 1;
+	let loopStart = 0;
 
-	const loopDuration = segments.reduce((sum, { segmentDuration }) => sum + segmentDuration, 0);
-	const pos = sessionOver ? -1 : currentTime % loopDuration;
+	if (!sessionOver) {
+		for (let k = 1; ; k++) {
+			const loopDuration = segments.reduce(
+				(sum, seg) => (k % (seg.skipCycles + 1) === 0 ? sum + seg.segmentDuration : sum),
+				0
+			);
+			if (elapsed + loopDuration > currentTime || loopDuration === 0) {
+				currentLoop = k;
+				loopStart = elapsed;
+				break;
+			}
+			elapsed += loopDuration;
+			if (elapsed >= totalDuration) {
+				currentLoop = k;
+				loopStart = elapsed;
+				break;
+			}
+		}
+	}
 
+	const posInCurrentLoop = sessionOver ? -1 : currentTime - loopStart;
+
+	let offset = 0;
 	return items.map((item, i) => {
-		const startTime = startTimes[i];
-		const { videoDuration, segmentDuration } = segments[i];
-		let playing = -1;
+		const { videoDuration, skipCycles } = segments[i];
+		const skipped = currentLoop % (skipCycles + 1) !== 0;
 
+		if (skipped) {
+			return { ...item, startTime: null, durationSeconds: videoDuration, playing: -1, skipped: true, posInCurrentLoop };
+		}
+
+		const startTime = offset;
+		offset += segments[i].segmentDuration;
+
+		let playing = -1;
 		if (!sessionOver) {
-			const localPos = pos - startTime;
+			const localPos = posInCurrentLoop - startTime;
 			if (localPos >= titleCardDuration && localPos < titleCardDuration + videoDuration) {
 				playing = localPos - titleCardDuration;
 			}
 		}
 
-		return { ...item, startTime, durationSeconds: videoDuration, playing };
+		return { ...item, startTime, durationSeconds: videoDuration, playing, skipped: false, posInCurrentLoop };
 	});
 }
