@@ -1,1 +1,0 @@
-import{H as e,R as t,V as n,w as r}from"../chunks/CIcKOwgX.js";import"../chunks/Cfug8aQt.js";import{t as i}from"../chunks/DhF9y-1O.js";function a(a,o){e(o,!0);let s=t(()=>o.data.items.filter(e=>e.room===`projection`));i(a,{get items(){return r(s)},accentColor:`#5f3eff`,title:`Projection Room`}),n()}export{a as component};
