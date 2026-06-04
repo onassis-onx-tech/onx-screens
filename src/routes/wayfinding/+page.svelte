@@ -1,7 +1,7 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
 	import Timeline from '$lib/Timeline.svelte';
-	import { artTimeline } from '$lib/artTimeline.js';
+	import { artTimeline, scheduledPlayTimes } from '$lib/artTimeline.js';
 
 	let { data } = $props();
 
@@ -46,53 +46,37 @@
 		return m > 0 ? `${m}m ${s % 60}s left` : `${s}s left`;
 	}
 
-	function computePlayTimes(timedItems) {
-		const loopDuration = timedItems.reduce(
-			(sum, item) => sum + titleCardDuration + item.durationSeconds + endCardDuration,
-			0
-		);
-		const now = Date.now();
-		return timedItems.map((item) => {
-			const times = [];
-			let offset = item.startTime + titleCardDuration;
-			while (offset < totalDuration) {
-				const ms = sessionStartMs + offset * 1000;
-				if (ms > now) {
-					const d = new Date(ms);
-					const h = d.getHours() % 12 || 12;
-					const m = d.getMinutes().toString().padStart(2, '0');
-					times.push(`${h}:${m}`);
-				}
-				offset += loopDuration;
-			}
-			return times;
-		});
+	function fmtTime(sec) {
+		const d = new Date(sessionStartMs + sec * 1000);
+		const h = d.getHours() % 12 || 12;
+		const m = d.getMinutes().toString().padStart(2, '0');
+		return `${h}:${m}`;
 	}
 
 	const projectionItems = $derived(
 		(() => {
-			const playTimes = computePlayTimes(timedProjection);
+			const playTimes = scheduledPlayTimes(projectionRaw, { titleCardDuration, endCardDuration, currentTime, totalDuration });
 			return timedProjection.map((item, i) => ({
 				primary: item.title,
 				secondary: item.artist,
 				description:
 					item.playing !== -1
 						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
-						: `Runtime: ${item.duration}. plays at ${playTimes[i].join(', ')}`
+						: `Runtime: ${item.duration}. plays at ${playTimes[i].map(fmtTime).join(', ')}`
 			}));
 		})()
 	);
 
 	const soundItems = $derived(
 		(() => {
-			const playTimes = computePlayTimes(timedSound);
+			const playTimes = scheduledPlayTimes(soundRaw, { titleCardDuration, endCardDuration, currentTime, totalDuration });
 			return timedSound.map((item, i) => ({
 				primary: item.title,
 				secondary: item.artist,
 				description:
 					item.playing !== -1
 						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
-						: `Runtime: ${item.duration}. plays at ${playTimes[i].join(', ')}`
+						: `Runtime: ${item.duration}. plays at ${playTimes[i].map(fmtTime).join(', ')}`
 			}));
 		})()
 	);

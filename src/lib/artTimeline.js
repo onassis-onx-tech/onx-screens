@@ -5,38 +5,41 @@ function parseDuration(str) {
 	return parts[0];
 }
 
-export function artTimeline(items, { titleCardDuration, endCardDuration, currentTime, totalDuration }) {
-	const sessionOver = currentTime >= totalDuration;
-
-	const segments = items.map((item) => {
+function buildSegments(items, titleCardDuration, endCardDuration) {
+	return items.map((item) => {
 		const videoDuration = parseDuration(item.duration);
 		const skipCycles = item.skipCycles ?? 0;
 		return { videoDuration, segmentDuration: titleCardDuration + videoDuration + endCardDuration, skipCycles };
 	});
+}
 
-	// Walk loops k=1,2,3,... accumulating duration until we find the loop containing currentTime.
+// Walk loops k=1,2,3,... until we find the one containing currentTime.
+// Returns { currentLoop, loopStart } where loopStart is seconds elapsed before this loop.
+function findCurrentLoop(segments, { currentTime, totalDuration }) {
 	let elapsed = 0;
+	for (let k = 1; ; k++) {
+		const loopDuration = segments.reduce(
+			(sum, seg) => (k % (seg.skipCycles + 1) === 0 ? sum + seg.segmentDuration : sum),
+			0
+		);
+		if (elapsed + loopDuration > currentTime || loopDuration === 0) {
+			return { currentLoop: k, loopStart: elapsed };
+		}
+		elapsed += loopDuration;
+		if (elapsed >= totalDuration) {
+			return { currentLoop: k, loopStart: elapsed };
+		}
+	}
+}
+
+export function artTimeline(items, { titleCardDuration, endCardDuration, currentTime, totalDuration }) {
+	const sessionOver = currentTime >= totalDuration;
+	const segments = buildSegments(items, titleCardDuration, endCardDuration);
+
 	let currentLoop = 1;
 	let loopStart = 0;
-
 	if (!sessionOver) {
-		for (let k = 1; ; k++) {
-			const loopDuration = segments.reduce(
-				(sum, seg) => (k % (seg.skipCycles + 1) === 0 ? sum + seg.segmentDuration : sum),
-				0
-			);
-			if (elapsed + loopDuration > currentTime || loopDuration === 0) {
-				currentLoop = k;
-				loopStart = elapsed;
-				break;
-			}
-			elapsed += loopDuration;
-			if (elapsed >= totalDuration) {
-				currentLoop = k;
-				loopStart = elapsed;
-				break;
-			}
-		}
+		({ currentLoop, loopStart } = findCurrentLoop(segments, { currentTime, totalDuration }));
 	}
 
 	const posInCurrentLoop = sessionOver ? -1 : currentTime - loopStart;
@@ -63,4 +66,35 @@ export function artTimeline(items, { titleCardDuration, endCardDuration, current
 
 		return { ...item, startTime, durationSeconds: videoDuration, playing, skipped: false, posInCurrentLoop };
 	});
+}
+
+// Returns number[][] — one array of seconds-from-session-start per item,
+// listing only future play times (video start, not title card start) within totalDuration.
+export function scheduledPlayTimes(items, { titleCardDuration, endCardDuration, currentTime, totalDuration }) {
+	const segments = buildSegments(items, titleCardDuration, endCardDuration);
+	const { currentLoop, loopStart } = findCurrentLoop(segments, { currentTime, totalDuration });
+
+	const result = items.map(() => []);
+
+	let loopElapsed = loopStart;
+	for (let k = currentLoop; loopElapsed < totalDuration; k++) {
+		let offset = 0;
+		for (let i = 0; i < items.length; i++) {
+			if (k % (segments[i].skipCycles + 1) === 0) {
+				const videoStart = loopElapsed + offset + titleCardDuration;
+				if (videoStart > currentTime && videoStart < totalDuration) {
+					result[i].push(videoStart);
+				}
+				offset += segments[i].segmentDuration;
+			}
+		}
+		const loopDuration = segments.reduce(
+			(sum, seg) => (k % (seg.skipCycles + 1) === 0 ? sum + seg.segmentDuration : sum),
+			0
+		);
+		if (loopDuration === 0) break;
+		loopElapsed += loopDuration;
+	}
+
+	return result;
 }
