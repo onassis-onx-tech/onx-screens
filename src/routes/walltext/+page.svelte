@@ -62,7 +62,7 @@
       class="w-full h-full"
     />
 
-    <div class="absolute right-0 bottom-0 w-[55%] text-white text-left font-normal text-2xl leading-[1.1]">
+    <div class="absolute right-0 bottom-0 w-[55%] text-white text-left font-normal text-xl leading-[1.1]">
       <div class="absolute bottom-0 left-0 w-full py-8 px-10 whitespace-pre-line">
         {#each tokens[activeIndex] as token, i}
           <span class="{i >= visibleCount ? 'text-transparent' : ''}">{token}</span>

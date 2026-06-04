@@ -35,7 +35,7 @@
 		artTimeline(items, { titleCardDuration, endCardDuration, currentTime, totalDuration })
 	);
 
-	const autoActive = $derived(() => {
+	const autoActive = $derived.by(() => {
 		const playing = timedItems.findIndex((item) => item.playing !== -1);
 		if (playing !== -1) return playing;
 		const loopDuration = timedItems.reduce(
@@ -78,9 +78,9 @@
 			description:
 				item.playing !== -1
 					? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
-					: i === active - 1
+					: i === autoActive - 1
 						? 'just finished'
-						: i === active + 1
+						: i === autoActive + 1
 							? 'next up'
 							: null
 		}))
@@ -93,7 +93,7 @@
 	{/if}
 	<div class="flex flex-row gap-16 flex-1 min-h-0">
 		<div class="shrink-0 w-80 overflow-y-auto">
-			<Timeline items={timelineItems} {active} {accentColor} />
+			<Timeline items={timelineItems} {active} {accentColor} onselect={handleSelect} />
 		</div>
 		<div class="flex-1 max-w-lg overflow-y-auto">
 			<ArtworkInformation item={selectedItem} {accentColor} />

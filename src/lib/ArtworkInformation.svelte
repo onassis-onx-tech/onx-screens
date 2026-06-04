@@ -20,7 +20,7 @@
 		</div>
 
 		{#if item.description}
-			<p class="text-2xl leading-relaxed whitespace-pre-line text-neutral-300">
+			<p class="text-2xl whitespace-pre-line text-neutral-300  leading-[1.1]">
 				{item.description}
 			</p>
 		{/if}
