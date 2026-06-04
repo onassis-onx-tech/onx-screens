@@ -9,8 +9,8 @@
 
 <RoomView
   items={soundItems}
-  titleCardDuration={7}
-  endCardDuration={7}
+  titleCardDuration={13}
+  endCardDuration={13}
   accentColor="#FAF80F"
   title="Sound Room"
 />

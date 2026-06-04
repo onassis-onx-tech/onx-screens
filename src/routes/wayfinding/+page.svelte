@@ -61,7 +61,7 @@
 				secondary: item.artist,
 				description:
 					item.playing !== -1
-						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
+						? [`now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`, playTimes[i].length ? `plays again at ${playTimes[i].map(fmtTime).join(', ')}` : null].filter(Boolean).join(' · ')
 						: `Runtime: ${item.duration}. plays at ${playTimes[i].map(fmtTime).join(', ')}`
 			}));
 		})()
@@ -75,7 +75,7 @@
 				secondary: item.artist,
 				description:
 					item.playing !== -1
-						? `now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`
+						? [`now playing · ${formatTimeLeft(item.durationSeconds - item.playing)}`, playTimes[i].length ? `plays again at ${playTimes[i].map(fmtTime).join(', ')}` : null].filter(Boolean).join(' · ')
 						: `Runtime: ${item.duration}. plays at ${playTimes[i].map(fmtTime).join(', ')}`
 			}));
 		})()
