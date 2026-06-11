@@ -1,6 +1,7 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
 	import Timeline from '$lib/Timeline.svelte';
+	import RefreshAt from '$lib/RefreshAt.svelte';
 	import { artTimeline, scheduledPlayTimes } from '$lib/artTimeline.js';
 
 	let { data } = $props();

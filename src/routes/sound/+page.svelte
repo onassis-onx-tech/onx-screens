@@ -1,5 +1,6 @@
 <script>
   import RoomView from "$lib/RoomView.svelte";
+  import RefreshAt from "$lib/RefreshAt.svelte";
 
   let { data } = $props();
   const soundItems = $derived(
@@ -7,6 +8,7 @@
   );
 </script>
 
+<RefreshAt />
 <RoomView
   items={soundItems}
   titleCardDuration={13}
